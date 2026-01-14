@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WorkNoted - Premium Offline Productivity</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007AAC",
+                        "primary-hover": "#006490",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#0B0E11",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#15191E",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#272B30",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(0, 122, 172, 0.3)',
+                        'glow-sm': '0 0 20px -5px rgba(0, 122, 172, 0.2)',
+                    },
+                    animation: {
+                        'tilt': 'tilt 10s infinite linear',
+                    },
+                    keyframes: {
+                        tilt: {
+                            '0%, 50%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(0.5deg)' },
+                            '75%': { transform: 'rotate(-0.5deg)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .linear-gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-400;
+            }
+            .glass-panel {
+                @apply bg-white/80 dark:bg-[#15191E]/80 backdrop-blur-md border border-border-light dark:border-border-dark;
+            }
+            .mask-linear-fade {
+                mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-gray-100 antialiased selection:bg-primary/20 selection:text-primary">
+    <div class="relative flex flex-col min-h-screen overflow-x-hidden">
+        <div
+            class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#0B0E11]/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
+            <div class="max-w-[1200px] mx-auto px-6 py-4">
+                <header class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="size-8 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined !text-[28px]">note_stack</span>
+                        </div>
+                        <span class="text-base font-semibold tracking-tight">WorkNoted</span>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm text-gray-600 hover:text-primary transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="index.html">Home</a>
+                        <a class="text-sm text-gray-600 hover:text-primary transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="products.html">Products</a>
+                    </nav>
+                    <div class="hidden md:flex">
+                        <button
+                            class="bg-primary hover:bg-primary-hover text-white text-sm font-medium px-5 py-2 rounded-full transition-all shadow-sm">
+                            Get WorkNoted
+                        </button>
+                    </div>
+                    <div class="md:hidden text-gray-900 dark:text-white cursor-pointer">
+                        <span class="material-symbols-outlined">menu</span>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 dark:bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10">
+            </div>
+            <div class="max-w-[1200px] mx-auto px-6 text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-8 border border-primary/20">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    v2.0 Now Available for Windows
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 linear-gradient-text pb-2">
+                    Your Digital Brain.<br />Offline &amp; Undistracted.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    WorkNoted is a local-first productivity powerhouse. Organize your notes, projects, and PDFs without
+                    cloud sync delays or privacy trade-offs.
+                </p>
+                <div class="flex flex-col items-center gap-4">
+                    <button
+                        class="bg-primary hover:bg-primary-hover text-white text-lg font-medium px-8 py-4 rounded-full transition-all shadow-glow hover:shadow-glow-sm transform hover:-translate-y-0.5">
+                        Get for Windows 10/11
+                    </button>
+                    <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
+                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                        No subscriptions. One-time purchase.
+                    </div>
+                </div>
+                <div class="mt-20 relative group perspective-1000">
+                    <div
+                        class="relative mx-auto w-full max-w-5xl rounded-xl bg-[#1a1a1a] p-2 shadow-2xl ring-1 ring-gray-900/10 dark:ring-white/10 transform transition-transform duration-700 ease-out hover:scale-[1.01] hover:rotate-0 rotate-x-6">
+                        <div
+                            class="relative rounded-lg overflow-hidden bg-background-dark aspect-[16/10] border border-border-dark shadow-inner">
+                            <div class="absolute inset-0 bg-[#0F1115] flex text-white">
+                                <div
+                                    class="w-64 border-r border-[#272B30] bg-[#15191E] flex flex-col p-4 hidden md:flex">
+                                    <div class="h-8 w-8 bg-primary/20 rounded-md mb-8"></div>
+                                    <div class="space-y-3">
+                                        <div class="h-2 w-24 bg-[#272B30] rounded"></div>
+                                        <div class="h-2 w-32 bg-[#272B30] rounded"></div>
+                                        <div class="h-2 w-20 bg-[#272B30] rounded"></div>
+                                    </div>
+                                    <div class="mt-8 space-y-3 opacity-50">
+                                        <div class="h-2 w-full bg-[#272B30] rounded"></div>
+                                        <div class="h-2 w-3/4 bg-[#272B30] rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 flex flex-col">
+                                    <div class="h-16 border-b border-[#272B30] flex items-center px-8 justify-between">
+                                        <div class="h-3 w-40 bg-[#272B30] rounded"></div>
+                                        <div class="flex gap-2">
+                                            <div class="size-8 rounded-full bg-[#272B30]"></div>
+                                            <div class="size-8 rounded-full bg-primary"></div>
+                                        </div>
+                                    </div>
+                                    <div class="p-8 grid grid-cols-3 gap-6">
+                                        <div class="col-span-2 space-y-4">
+                                            <div class="h-32 bg-[#1A1D23] rounded-lg border border-[#272B30]"></div>
+                                            <div class="h-32 bg-[#1A1D23] rounded-lg border border-[#272B30]"></div>
+                                        </div>
+                                        <div class="col-span-1 space-y-4">
+                                            <div class="h-64 bg-[#1A1D23] rounded-lg border border-[#272B30]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -inset-4 bg-primary/20 blur-3xl -z-10 rounded-[20%] opacity-40"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-24 bg-white dark:bg-[#0B0E11] border-t border-border-light dark:border-border-dark">
+            <div class="max-w-[1200px] mx-auto px-6 space-y-32">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2 space-y-6">
+                        <div
+                            class="inline-flex items-center gap-2 text-primary font-semibold tracking-wide uppercase text-xs">
+                            <span class="w-8 h-[1px] bg-primary"></span>
+                            Student Mode
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Ace Your Exams.</h2>
+                        <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Switch to a focused study environment. Organize lecture notes by semester, annotate PDFs
+                            directly, and keep track of assignment deadlines without distractions.
+                        </p>
+                        <ul class="space-y-3 mt-4">
+                            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span>Built-in Flashcards</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span>Lecture Recording Sync</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-primary/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div
+                            class="relative bg-background-light dark:bg-[#15191E] border border-border-light dark:border-border-dark rounded-2xl aspect-[4/3] overflow-hidden shadow-2xl flex items-center justify-center p-8">
+                            <div
+                                class="w-full h-full bg-white dark:bg-[#1A1D23] rounded-lg shadow-sm flex flex-col p-4 border border-border-light dark:border-border-dark">
+                                <div class="w-1/3 h-6 bg-green-100 dark:bg-green-900/30 rounded mb-4"></div>
+                                <div class="grid grid-cols-2 gap-4 flex-1">
+                                    <div
+                                        class="bg-gray-50 dark:bg-[#22262C] rounded border border-dashed border-gray-200 dark:border-gray-700">
+                                    </div>
+                                    <div
+                                        class="bg-gray-50 dark:bg-[#22262C] rounded border border-dashed border-gray-200 dark:border-gray-700">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+                    <div class="md:w-1/2 space-y-6">
+                        <div
+                            class="inline-flex items-center gap-2 text-primary font-semibold tracking-wide uppercase text-xs">
+                            <span class="w-8 h-[1px] bg-primary"></span>
+                            Work Mode
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Master Your Projects.
+                        </h2>
+                        <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
+                            A professional workspace for serious output. Manage daily stand-ups, track deliverables with
+                            Kanban boards, and keep client data securely offline.
+                        </p>
+                        <ul class="space-y-3 mt-4">
+                            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span>Markdown Support</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span>One-click Reports</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-bl from-amber-500/20 to-primary/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div
+                            class="relative bg-background-light dark:bg-[#15191E] border border-border-light dark:border-border-dark rounded-2xl aspect-[4/3] overflow-hidden shadow-2xl flex items-center justify-center p-8">
+                            <div
+                                class="w-full h-full bg-white dark:bg-[#1A1D23] rounded-lg shadow-sm flex flex-col p-4 border border-border-light dark:border-border-dark">
+                                <div class="w-1/3 h-6 bg-amber-100 dark:bg-amber-900/30 rounded mb-4"></div>
+                                <div class="space-y-2 flex-1">
+                                    <div class="h-2 w-full bg-gray-100 dark:bg-[#22262C] rounded"></div>
+                                    <div class="h-2 w-full bg-gray-100 dark:bg-[#22262C] rounded"></div>
+                                    <div class="h-2 w-3/4 bg-gray-100 dark:bg-[#22262C] rounded"></div>
+                                    <div
+                                        class="mt-4 h-32 w-full bg-gray-50 dark:bg-[#22262C] rounded border border-gray-200 dark:border-gray-700">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-24 bg-gray-50 dark:bg-[#0F1115]">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Everything you need. Nothing you
+                        don't.</h2>
+                    <p class="text-gray-500 dark:text-gray-400">Designed with a philosophy of subtraction. We removed
+                        the bloat so you can focus on the work.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="p-8 bg-white dark:bg-[#15191E] rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all group">
+                        <div
+                            class="size-12 rounded-lg bg-gray-100 dark:bg-[#22262C] flex items-center justify-center text-gray-900 dark:text-white mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">shield</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Zero Cloud Data</h3>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Your data stays 100% on your local hard drive. No servers, no tracking, strictly
+                            privacy-first.
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 bg-white dark:bg-[#15191E] rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all group">
+                        <div
+                            class="size-12 rounded-lg bg-gray-100 dark:bg-[#22262C] flex items-center justify-center text-gray-900 dark:text-white mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">bolt</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Instant Search</h3>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Native indexing means you find that one specific lecture note or meeting minute in
+                            milliseconds.
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 bg-white dark:bg-[#15191E] rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all group">
+                        <div
+                            class="size-12 rounded-lg bg-gray-100 dark:bg-[#22262C] flex items-center justify-center text-gray-900 dark:text-white mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">description</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">PDF Export</h3>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Don't get locked in. PDF, Markdown, and plain text export support is built right into the
+                            core.
+                        </p>
+                    </div>
+                    <div
+                        class="p-8 bg-white dark:bg-[#15191E] rounded-xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-all group">
+                        <div
+                            class="size-12 rounded-lg bg-gray-100 dark:bg-[#22262C] flex items-center justify-center text-gray-900 dark:text-white mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">auto_fix_high</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Smart Wizard</h3>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Set up your workspace in seconds with our intelligent onboarding that adapts to your role.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="py-24 bg-white dark:bg-[#0B0E11] border-t border-border-light dark:border-border-dark overflow-hidden">
+            <div class="max-w-[1200px] mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white">Who is WorkNoted for?
+                </h2>
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <div
+                        class="flex-1 bg-gray-50 dark:bg-[#15191E] border border-border-light dark:border-border-dark p-8 rounded-2xl hover:border-primary/50 transition-colors">
+                        <div class="mb-4">
+                            <span
+                                class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">school</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">The Thesis Writer</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            "Finally, a place to dump thousands of research notes without the app crashing. The offline
+                            search is a lifesaver."
+                        </p>
+                    </div>
+                    <div
+                        class="flex-1 bg-gray-50 dark:bg-[#15191E] border border-border-light dark:border-border-dark p-8 rounded-2xl hover:border-primary/50 transition-colors">
+                        <div class="mb-4">
+                            <span
+                                class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">code</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">The Developer</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            "I use WorkNoted to keep my snippets and project docs. It feels like a native IDE extension
+                            but for my brain."
+                        </p>
+                    </div>
+                    <div
+                        class="flex-1 bg-gray-50 dark:bg-[#15191E] border border-border-light dark:border-border-dark p-8 rounded-2xl hover:border-primary/50 transition-colors">
+                        <div class="mb-4">
+                            <span
+                                class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">business_center</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">The Consultant</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            "Client confidentiality is paramount. WorkNoted ensures no data ever leaves my laptop.
+                            Period."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-24 bg-gray-50 dark:bg-[#0F1115] border-t border-border-light dark:border-border-dark">
+            <div class="max-w-[800px] mx-auto px-6">
+                <div
+                    class="bg-white dark:bg-[#15191E] border border-border-light dark:border-border-dark rounded-xl p-8 mb-12 shadow-sm">
+                    <h3
+                        class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6 border-b border-border-light dark:border-border-dark pb-4">
+                        Technical Specifications</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">Operating System</div>
+                            <div class="text-base font-medium text-gray-900 dark:text-white">Windows 10 / 11</div>
+                            <div class="text-xs text-gray-400 mt-1">64-bit architecture</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">Language Support</div>
+                            <div class="text-base font-medium text-gray-900 dark:text-white">English, Italian</div>
+                            <div class="text-xs text-gray-400 mt-1">More coming soon</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 mb-1">Delivery</div>
+                            <div class="text-base font-medium text-gray-900 dark:text-white">Instant Download</div>
+                            <div class="text-xs text-gray-400 mt-1">Via Gumroad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Ready to regain your focus?</h2>
+                    <button
+                        class="w-full sm:w-auto min-w-[300px] bg-primary hover:bg-primary-hover text-white text-lg font-bold py-4 px-8 rounded-lg shadow-glow hover:shadow-glow-sm transition-all transform hover:-translate-y-1">
+                        Buy on Gumroad - Instant Download
+                    </button>
+                    <p class="mt-4 text-sm text-gray-500">30-day money-back guarantee. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+        <footer class="w-full bg-white dark:bg-[#0B0E11] py-12 border-t border-border-light dark:border-border-dark">
+            <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">note_stack</span>
+                    <span class="font-bold text-gray-900 dark:text-white">WorkNoted</span>
+                </div>
+                <div class="flex gap-8 text-sm text-gray-500">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms</a>
+                    <a class="hover:text-primary transition-colors" href="#">Twitter</a>
+                    <a class="hover:text-primary transition-colors" href="#">Contact</a>
+                </div>
+                <div class="text-sm text-gray-400">
+                    © 2024 WorkNoted Inc.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
