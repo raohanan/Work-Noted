@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Privacy Policy & Legal Terms | WorkNoted Trust Center</title>
+    <meta name="description"
+        content="Learn how WorkNoted protects your data with a local-first, zero-knowledge architecture. Read our Privacy Policy, Terms of Use, and Disclaimer." />
+    <meta name="keywords"
+        content="privacy policy, local-first data, secure note-taking legal, zero-knowledge software, user data rights, WorkNoted terms" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0F172A", // Headlines (Dark Slate)
+                        "secondary": "#64748B", // Body Text (Soft Slate)
+                        "accent": "#007AAC", // Primary Blue Button/Accent
+                        "accent-dark": "#00628B", // Darker Blue for Hover
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#0B0E11",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#15191E",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#272B30",
+                        "surface": "#F8FAFC", // Light Cool Gray Background
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass-card {
+                @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-body antialiased selection:bg-blue-100">
+    <div class="relative min-h-screen flex flex-col">
+        <div
+            class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#0B0E11]/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
+            <div class="max-w-[1200px] mx-auto px-6 py-4">
+                <header class="flex items-center justify-between">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="size-8 flex items-center justify-center text-accent">
+                            <span class="material-symbols-outlined !text-[28px]">note_stack</span>
+                        </div>
+                        <span class="text-base font-semibold tracking-tight text-primary">WorkNoted</span>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="index.html">Home</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="products.html">Products</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="agents.html">Agents</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="faq.html">FAQ</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="privacy.html">Privacy</a>
+                    </nav>
+                    <div class="hidden md:flex">
+                        <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
+                            class="bg-accent hover:bg-accent-dark text-white text-sm font-medium px-5 py-2 rounded-full transition-all shadow-sm">
+                            Get WorkNoted
+                        </a>
+                    </div>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden text-gray-900 dark:text-white cursor:pointer focus:outline-none">
+                        <span id="menu-icon" class="material-symbols-outlined">menu</span>
+                    </button>
+                </header>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden border-t border-border-light dark:border-border-dark bg-white/95 dark:bg-[#0B0E11]/95 backdrop-blur-md">
+                <div class="flex flex-col p-6 gap-6">
+                    <nav class="flex flex-col gap-4">
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="products.html">Products</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="agents.html">Agents</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="faq.html">FAQ</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="privacy.html">Privacy</a>
+                    </nav>
+                    <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-medium transition-all shadow-sm text-center">
+                        Get WorkNoted
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <main class="flex-grow pt-12">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="flex flex-col lg:flex-row gap-12 pt-12">
+                    <aside
+                        class="w-full lg:w-1/4 sticky top-[72px] lg:top-28 lg:h-[calc(100vh-8rem)] z-40 lg:z-10 flex flex-col gap-0 lg:gap-8">
+                        <div class="hidden lg:block">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 pl-4">Navigation
+                            </p>
+                            <nav class="flex flex-col gap-1 border-l border-slate-100 dark:border-slate-800"
+                                id="desktop-nav">
+                                <a class="nav-link-desktop group flex items-center justify-between border-l-2 border-accent bg-blue-50/50 py-3 pl-4 pr-3 text-sm font-semibold text-accent transition-all dark:bg-blue-900/10"
+                                    href="#privacy" data-section="privacy">
+                                    Privacy Policy
+                                    <span class="material-symbols-outlined text-base opacity-100">arrow_forward</span>
+                                </a>
+                                <a class="nav-link-desktop group flex items-center justify-between border-l-2 border-transparent py-3 pl-4 pr-3 text-sm font-medium text-slate-600 hover:border-slate-300 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-all"
+                                    href="#terms" data-section="terms">
+                                    Terms of Use
+                                    <span
+                                        class="material-symbols-outlined text-base opacity-0 transition-opacity">arrow_forward</span>
+                                </a>
+                                <a class="nav-link-desktop group flex items-center justify-between border-l-2 border-transparent py-3 pl-4 pr-3 text-sm font-medium text-slate-600 hover:border-slate-300 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-all"
+                                    href="#disclaimer" data-section="disclaimer">
+                                    Disclaimer
+                                    <span
+                                        class="material-symbols-outlined text-base opacity-0 transition-opacity">arrow_forward</span>
+                                </a>
+                            </nav>
+                        </div>
+                        <!-- Mobile Filter Nav (Sticky) -->
+                        <div class="sticky top-[72px] z-40 -mx-6 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 lg:hidden flex gap-2 overflow-x-auto scrollbar-hide"
+                            id="mobile-filter-nav">
+                            <a class="nav-link-mobile whitespace-nowrap rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition-all shadow-sm"
+                                href="#privacy" data-section="privacy">Privacy Policy</a>
+                            <a class="nav-link-mobile whitespace-nowrap rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300 transition-all hover:bg-slate-200"
+                                href="#terms" data-section="terms">Terms of Use</a>
+                            <a class="nav-link-mobile whitespace-nowrap rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300 transition-all hover:bg-slate-200"
+                                href="#disclaimer" data-section="disclaimer">Disclaimer</a>
+                        </div>
+                        <div class="mt-auto hidden lg:block rounded-xl bg-slate-50 p-6 dark:bg-slate-800/30">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Version</p>
+                            <p class="text-sm font-medium text-slate-900 dark:text-white">v2.4 (October 2026)</p>
+                            <div class="my-4 h-px w-full bg-slate-200 dark:bg-slate-700"></div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Support</p>
+                            <a class="text-sm font-medium text-accent hover:underline"
+                                href="mailto:info@newagent.site">info@newagent.site</a>
+                        </div>
+                    </aside>
+                    <main class="w-full lg:w-3/4 pb-24">
+                        <div class="mb-16 text-center max-w-prose mx-auto">
+                            <h1
+                                class="mb-4 text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+                                Privacy & Trust</h1>
+                            <p class="text-xl leading-relaxed text-slate-500 dark:text-slate-400">
+                                Transparency is one of our defining features. Your data belongs to you—period.
+                            </p>
+                        </div>
+                        <div class="space-y-24 max-w-prose mx-auto">
+                            <section class="scroll-mt-32" id="privacy">
+                                <h2
+                                    class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                                    Privacy Policy
+                                </h2>
+                                <div
+                                    class="mb-8 rounded-lg bg-blue-50 p-6 border border-blue-100 dark:bg-blue-900/20 dark:border-blue-800">
+                                    <div class="flex gap-4">
+                                        <span class="material-symbols-outlined text-accent shrink-0">info</span>
+                                        <div>
+                                            <p class="font-bold text-blue-900 dark:text-blue-100 mb-1">In short: We are
+                                                Local-First.</p>
+                                            <p class="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
+                                                We do not collect your notes, files, or personal data. Everything stays
+                                                on your PC. The only data that leaves your device is anonymized crash
+                                                reports if you opt-in.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prose prose-lg prose-slate dark:prose-invert">
+                                    <p class="text-slate-600 dark:text-slate-300 leading-8 mb-8">
+                                        This Privacy Policy outlines our commitment to a local-first architecture.
+                                        Unlike cloud-based tools, WorkNoted is designed to operate offline-first,
+                                        meaning your data is stored locally on your hard drive.
+                                    </p>
+                                    <div class="space-y-8">
+                                        <div>
+                                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Data
+                                                Collection</h3>
+                                            <p class="text-slate-600 dark:text-slate-300 leading-7">
+                                                We collect <strong>zero</strong> user-generated content. Your notes,
+                                                tasks, and project files are never transmitted to our servers. We do not
+                                                have access to your database password or encryption keys.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Local
+                                                Storage</h3>
+                                            <p class="text-slate-600 dark:text-slate-300 leading-7">
+                                                All application data is stored in a SQLite database located at
+                                                <code>~/Documents/WorkNoted/</code> by default. You have full control
+                                                over this file. You can back it up, move it, or delete it at any time.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Third
+                                                Parties</h3>
+                                            <p class="text-slate-600 dark:text-slate-300 leading-7">
+                                                We use a limited set of third-party services strictly for payment
+                                                processing (Stripe) and optional crash reporting (Sentry). These
+                                                services do not have access to your notes content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <hr class="border-slate-100 dark:border-slate-800" />
+                            <section class="scroll-mt-32" id="terms">
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Terms of Use</h2>
+                                <div
+                                    class="mb-8 rounded-lg bg-slate-50 p-6 border border-slate-100 dark:bg-slate-800/50 dark:border-slate-700">
+                                    <div class="flex gap-4">
+                                        <span class="material-symbols-outlined text-slate-500 shrink-0">gavel</span>
+                                        <div>
+                                            <p class="font-bold text-slate-900 dark:text-slate-100 mb-1">In short: It's
+                                                a license.</p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                                You are buying a license to use the software. You own your data, but you
+                                                do not own the code. You cannot resell or redistribute the .exe or .dmg
+                                                files.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-8">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">License Grant
+                                        </h3>
+                                        <p class="text-slate-600 dark:text-slate-300 leading-7">
+                                            Subject to the terms of this Agreement, WorkNoted grants you a limited,
+                                            non-exclusive, non-transferable license to download, install, and use the
+                                            Software for your personal or internal business purposes.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Refund Policy
+                                        </h3>
+                                        <p class="text-slate-600 dark:text-slate-300 leading-7">
+                                            We offer a 30-day money-back guarantee. If the software does not meet your
+                                            needs, email us with your receipt, and we will issue a full refund, no
+                                            questions asked.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Restrictions
+                                        </h3>
+                                        <ul
+                                            class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-300 leading-7 marker:text-slate-300">
+                                            <li>You may not decompile, reverse engineer, disassemble, or attempt to
+                                                derive the source code of the Software.</li>
+                                            <li>You may not modify, adapt, improve, or create derivative works from the
+                                                Software.</li>
+                                            <li>You may not distribute, sell, lease, rent, or lend the Software to any
+                                                third party.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                            <hr class="border-slate-100 dark:border-slate-800" />
+                            <section class="scroll-mt-32" id="disclaimer">
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Disclaimer</h2>
+                                <div class="prose prose-lg prose-slate dark:prose-invert">
+                                    <p class="text-slate-600 dark:text-slate-300 leading-8">
+                                        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+                                        FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+                                    </p>
+                                    <p class="text-slate-600 dark:text-slate-300 leading-8 mt-4">
+                                        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+                                        DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+                                        ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+                                        DEALINGS IN THE SOFTWARE.
+                                    </p>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.textContent = 'close';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                toggleMenu();
+            }
+        });
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            });
+        });
+
+
+        // --- Active Section Observer & Sidebar Logic ---
+        let isManualScroll = false;
+        let scrollTimeout;
+
+        const sections = document.querySelectorAll('section.scroll-mt-32');
+        const desktopLinks = document.querySelectorAll('.nav-link-desktop');
+        const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+
+        function updateActiveLink(sectionId) {
+            desktopLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${sectionId}`;
+                const arrow = link.querySelector('.material-symbols-outlined');
+                if (isActive) {
+                    link.classList.add('border-accent', 'bg-blue-50/50', 'text-accent', 'font-semibold');
+                    link.classList.remove('border-transparent', 'text-slate-600', 'font-medium');
+                    if (arrow) { arrow.classList.add('opacity-100'); arrow.classList.remove('opacity-0'); }
+                } else {
+                    link.classList.remove('border-accent', 'bg-blue-50/50', 'text-accent', 'font-semibold');
+                    link.classList.add('border-transparent', 'text-slate-600', 'font-medium');
+                    if (arrow) { arrow.classList.remove('opacity-100'); arrow.classList.add('opacity-0'); }
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${sectionId}`;
+                if (isActive) {
+                    link.classList.add('bg-accent', 'text-white', 'font-semibold');
+                    link.classList.remove('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300', 'font-medium');
+                } else {
+                    link.classList.remove('bg-accent', 'text-white', 'font-semibold');
+                    link.classList.add('bg-slate-100', 'text-slate-600', 'dark:bg-slate-800', 'dark:text-slate-300', 'font-medium');
+                }
+            });
+        }
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-15% 0px -80% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (isManualScroll) return; // Ignore observer during click-initiated scrolls
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateActiveLink(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '' || !targetId.startsWith('#')) return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+
+                    // Set manual scroll flag to prevent "dancing"
+                    isManualScroll = true;
+                    updateActiveLink(targetId.substring(1));
+
+                    const offset = window.innerWidth < 1024 ? 140 : 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Clear and reset the timeout to ensure observer re-enables
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        isManualScroll = false;
+                    }, 800); // Wait for smooth scroll to finish
+                }
+            });
+        });
+
+        // Mobile sticky nav shadow
+        const mobileNav = document.getElementById('mobile-filter-nav');
+        if (mobileNav) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 20) {
+                    mobileNav.classList.add('shadow-lg', 'bg-white');
+                    mobileNav.classList.remove('bg-white/95');
+                } else {
+                    mobileNav.classList.remove('shadow-lg', 'bg-white');
+                    mobileNav.classList.add('bg-white/95');
+                }
+            }, { passive: true });
+        }
+    </script>
+</body>
+
+</html>

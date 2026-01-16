@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FAQ & Support | WorkNoted Private Note-Taking App</title>
+    <meta name="description"
+        content="Have questions about WorkNoted? Find answers about our one-time purchase licensing, local-first privacy architecture, and offline-first note-taking features." />
+    <meta name="keywords"
+        content="WorkNoted FAQ, offline notes support, local software licensing, privacy-focused productivity help, secure notes troubleshooting" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0F172A", // Headlines (Dark Slate)
+                        "secondary": "#64748B", // Body Text (Soft Slate)
+                        "accent": "#007AAC", // Primary Blue Button/Accent
+                        "accent-dark": "#00628B", // Darker Blue for Hover
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#0B0E11",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#15191E",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#272B30",
+                        "surface": "#F8FAFC", // Light Cool Gray Background
+                        "brand-dark": "#0F172A",
+                        "brand-muted": "#64748B",
+                        "brand-border": "#E2E8F0",
+                        "brand-blue": "#3B82F6",
+                    },
+                    fontFamily: {
+                        "sans": ["Plus Jakarta Sans", "Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-white text-brand-dark antialiased;
+            }
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .linear-mask {
+            mask-image: linear-gradient(to bottom, black, transparent);
+        }
+    </style>
+</head>
+
+<body class="selection:bg-blue-100">
+    <div class="relative min-h-screen flex flex-col">
+        <div
+            class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#0B0E11]/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
+            <div class="max-w-[1200px] mx-auto px-6 py-4">
+                <header class="flex items-center justify-between">
+                    <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="size-8 flex items-center justify-center text-accent">
+                            <span class="material-symbols-outlined !text-[28px]">note_stack</span>
+                        </div>
+                        <span class="text-base font-semibold tracking-tight text-primary">WorkNoted</span>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="index.html">Home</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="products.html">Products</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="agents.html">Agents</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="faq.html">FAQ</a>
+                        <a class="text-sm text-gray-600 hover:text-accent transition-colors dark:text-gray-400 dark:hover:text-white"
+                            href="privacy.html">Privacy</a>
+                    </nav>
+                    <div class="hidden md:flex">
+                        <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
+                            class="bg-accent hover:bg-accent-dark text-white text-sm font-medium px-5 py-2 rounded-full transition-all shadow-sm">
+                            Get WorkNoted
+                        </a>
+                    </div>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden text-gray-900 dark:text-white cursor:pointer focus:outline-none">
+                        <span id="menu-icon" class="material-symbols-outlined">menu</span>
+                    </button>
+                </header>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden border-t border-border-light dark:border-border-dark bg-white/95 dark:bg-[#0B0E11]/95 backdrop-blur-md">
+                <div class="flex flex-col p-6 gap-6">
+                    <nav class="flex flex-col gap-4">
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="products.html">Products</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="agents.html">Agents</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="faq.html">FAQ</a>
+                        <a class="text-base font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                            href="privacy.html">Privacy</a>
+                    </nav>
+                    <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-medium transition-all shadow-sm text-center">
+                        Get WorkNoted
+                    </a>
+                </div>
+            </div>
+        </div>
+        <main class="flex-grow">
+            <section
+                class="pt-20 pb-16 px-6 text-center border-b border-brand-border bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white">
+                <div class="max-w-3xl mx-auto flex flex-col items-center">
+                    <div
+                        class="mb-6 inline-flex items-center justify-center size-14 bg-white border border-brand-border rounded-2xl shadow-sm text-brand-muted">
+                        <span class="material-symbols-outlined !text-[28px]">search</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-dark mb-4">Frequently Asked
+                        Questions</h1>
+                    <p class="text-lg text-brand-muted max-w-xl mx-auto leading-relaxed">
+                        Clear answers on our licensing model, local-first privacy commitment, and technical
+                        capabilities.
+                    </p>
+                </div>
+            </section>
+            <section class="max-w-6xl mx-auto px-6 py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+                    <div class="flex flex-col gap-8">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue">payments</span>
+                            <h2 class="text-sm font-bold uppercase tracking-widest text-brand-muted">General &amp;
+                                Licensing</h2>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">Is this a subscription?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    No. WorkNoted is a <strong>one-time purchase</strong>. We believe you should own
+                                    your software. One payment gives you a lifetime license for the current major
+                                    version.
+                                </div>
+                            </details>
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">Who is the target audience?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    WorkNoted is optimized for <strong>students, freelancers, and researchers</strong>
+                                    who need a clean, distraction-free environment and complete control over their
+                                    intellectual property.
+                                </div>
+                            </details>
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">What operating systems are supported?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    Currently, WorkNoted is available for <strong>Windows only</strong>. We are focusing
+                                    on delivering the best experience on the PC platform before expanding to other
+                                    systems.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-brand-blue">lock</span>
+                            <h2 class="text-sm font-bold uppercase tracking-widest text-brand-muted">Technical &amp;
+                                Privacy</h2>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">How does cloud sync work?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    It doesn't. WorkNoted is <strong>Local-First</strong>. Your data never leaves your
+                                    machine unless you explicitly move it. This ensures 100% privacy and zero downtime.
+                                </div>
+                            </details>
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">How do I manage backups?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    Backups are simple. You can perform a <strong>manual folder copy</strong> of your
+                                    database or use our built-in <strong>export utility</strong> to save your work as
+                                    PDF or Markdown files.
+                                </div>
+                            </details>
+                            <details
+                                class="group border border-brand-border rounded-xl bg-white shadow-sm hover:border-slate-300 transition-colors">
+                                <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                                    <h3 class="font-bold text-[#0F172A] pr-4">Is Dark Mode available?</h3>
+                                    <span
+                                        class="material-symbols-outlined text-brand-muted group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <div class="px-5 pb-5 text-brand-muted leading-relaxed">
+                                    Yes! WorkNoted features a premium, eye-friendly <strong>Dark Mode</strong>. It can
+                                    follow your system settings or be toggled manually in the preferences menu.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="max-w-4xl mx-auto px-6 pb-24">
+                <div
+                    class="bg-blue-50/30 border border-blue-100 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 size-64 bg-blue-100/40 rounded-full blur-3xl">
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center gap-4">
+                        <div
+                            class="size-12 bg-white rounded-xl shadow-sm border border-blue-100 flex items-center justify-center text-brand-blue mb-2">
+                            <span class="material-symbols-outlined !text-[24px]">support_agent</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-brand-dark">Need human support?</h2>
+                        <p class="text-brand-muted max-w-md mx-auto">
+                            If you have a technical issue or a feature request, reach out directly. Our team is ready to
+                            help.
+                        </p>
+                        <a class="mt-4 text-lg font-bold text-brand-blue hover:text-blue-700 transition-colors"
+                            href="mailto:info@newagent.site">
+                            info@newagent.site
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="w-full bg-white border-t border-slate-100 pt-16 pb-8 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                    <div class="col-span-2 lg:col-span-2">
+                        <div class="flex items-center gap-2 mb-6 text-slate-900">
+                            <div class="size-8 flex items-center justify-center text-accent">
+                                <span class="material-symbols-outlined !text-[24px]">note_stack</span>
+                            </div>
+                            <h2 class="text-lg font-bold tracking-tight">WorkNoted</h2>
+                        </div>
+                        <p class="text-sm text-slate-500 max-w-xs mb-6">
+                            The local-first, privacy-focused workspace for deep work. Securely organize your projects,
+                            notes, and intellectual property—completely offline.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="font-semibold text-slate-900 mb-2">Product</h4>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="index.html">Home</a>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors"
+                            href="products.html">Features</a>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors"
+                            href="https://gumroad.com/l/Worknoted">Buy Now</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="font-semibold text-slate-900 mb-2">Services</h4>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="agents.html">Custom
+                            Agents</a>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors"
+                            href="agents.html">Automation</a>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h4 class="font-semibold text-slate-900 mb-2">Support</h4>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="faq.html">FAQ</a>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="privacy.html">Legal
+                            Center</a>
+                        <a class="text-sm text-slate-500 hover:text-accent transition-colors"
+                            href="agents.html#contact-form">Contact</a>
+                    </div>
+                </div>
+                <div
+                    class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-sm text-slate-400">© 2026 WorkNoted Inc. Designed in Italy.</p>
+                    <div class="flex gap-6">
+                        <a class="text-sm text-slate-400 hover:text-slate-600" href="privacy.html#privacy">Privacy
+                            Policy</a>
+                        <a class="text-sm text-slate-400 hover:text-slate-600" href="privacy.html#terms">Terms of
+                            Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.textContent = 'close';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+                toggleMenu();
+            }
+        });
+
+        // Close menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.textContent = 'menu';
+            });
+        });
+    </script>
+</body>
+
+</html>
