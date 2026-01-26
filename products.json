@@ -1,0 +1,56 @@
+[
+    {
+        "id": "worknoted-lifetime",
+        "type": "digital",
+        "name": "WorkNoted. Lifetime Access!",
+        "price": "€9.99",
+        "badge": "V2.0 NOW AVAILABLE",
+        "description": "The ultimate local-first productivity tool. Achieve your goals with responsive data organization and absolute privacy.",
+        "features": [
+            "Student & Work Modes",
+            "Pro PDF Handling & Annotation",
+            "Instant Full-Text Search",
+            "Zero Cloud Dependency",
+            "Native EN/IT Support"
+        ],
+        "ctaText": "Get on Gumroad",
+        "ctaLink": "https://gumroad.com/l/Worknoted",
+        "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDyy-XQppG0iglX9gD2PEUnw4zkbp6qky8F8pwbnY-d0d1ZdlE6MTMzgNcPk9oJE9DZ5iY9661P-v7EiFZuobMDXVhayJJ6tsv_uqxDx4mHzXVw_AOgtV0fxrA5vPBM0uGK0qCVfYwlSGizdtamqjGiCX1fwwlVnKAA3v3dgY4tHaFiDNnP640ApzDILZB1v3Z9MJsz6NAPQD-xetlaF3IrdGiU6kVJzJVNu2ibzNUdTXguqreOh20XB9TZxqW_NZU30Ib41tL2io8"
+    },
+    {
+        "id": "custom-ai-agent-research",
+        "type": "service",
+        "name": "Custom AI Research Agent",
+        "price": null,
+        "badge": "POPULAR",
+        "description": "A tailored AI agent designed to automate research, summarize documents, and surface insights specific to your domain.",
+        "features": [
+            "Domain-Specific Training",
+            "Multi-Source Data Ingestion",
+            "Automated Reports & Summaries",
+            "Prompt & Workflow Customization",
+            "Private Deployment Options"
+        ],
+        "ctaText": "Request a Quote",
+        "ctaLink": "agents.html#contact-form",
+        "image": "images/agents1.webp"
+    },
+    {
+        "id": "custom-ai-agent-support",
+        "type": "service",
+        "name": "Custom AI Support Agent",
+        "price": null,
+        "badge": "NEW",
+        "description": "An intelligent support agent trained on your knowledge base to handle FAQs, customer queries, and internal support workflows.",
+        "features": [
+            "Knowledge Base Integration",
+            "24/7 Automated Responses",
+            "Human Handoff Support",
+            "Brand-Aligned Tone",
+            "Analytics & Conversation Logs"
+        ],
+        "ctaText": "Request a Quote",
+        "ctaLink": "agents.html#contact-form",
+        "image": "images/agents2.png"
+    }
+]

@@ -63,7 +63,21 @@
             -moz-appearance: none;
             appearance: none;
         }
+        @keyframes modalShow {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-modal {
+            animation: modalShow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
     </style>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function () {
+        emailjs.init("LSK2jIjLbtJrLTrns");
+      })();
+  </script>
 </head>
 
 <body class="font-display bg-white text-slate-900 overflow-x-hidden antialiased">
@@ -96,7 +110,7 @@
           <div class="hidden md:flex">
             <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
               class="bg-accent hover:bg-accent-dark text-white text-sm font-medium px-5 py-2 rounded-full transition-all shadow-sm">
-              Buy Now
+              Get WorkNoted
             </a>
           </div>
           <button id="mobile-menu-btn"
@@ -123,7 +137,7 @@
           </nav>
           <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
             class="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-medium transition-all shadow-sm text-center">
-            Buy Now
+            Get WorkNoted
           </a>
         </div>
       </div>
@@ -341,35 +355,117 @@
             <h2 class="text-3xl font-bold text-slate-900 mb-3">Let’s Build Your Solution.</h2>
             <p class="text-slate-500">Tell us what you want to automate. We'll design the logic.</p>
           </div>
-          <form class="space-y-6">
+          <form id="contact-form-element" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <label class="block text-sm font-semibold text-slate-700" for="name">Name</label>
                 <input
                   class="w-full px-4 py-3 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all placeholder:text-slate-400"
-                  id="name" placeholder="Enter your name" type="text" />
+                  id="name" name="from_name" placeholder="Enter your name" type="text" required />
               </div>
               <div class="space-y-2">
                 <label class="block text-sm font-semibold text-slate-700" for="email">Email</label>
                 <input
                   class="w-full px-4 py-3 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all placeholder:text-slate-400"
-                  id="email" placeholder="name@company.com" type="email" />
+                  id="email" name="from_email" placeholder="name@company.com" type="email" required />
               </div>
             </div>
-            <div class="space-y-2">
-              <label class="block text-sm font-semibold text-slate-700" for="use-case">Intended Use</label>
-              <div class="relative">
-                <select
-                  class="w-full px-4 py-3 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus:ring-2 focus:ring-accent focus:border-transparent outline-none appearance-none transition-all cursor-pointer !pr-10"
-                  id="use-case">
-                  <option disabled="" selected="" value="">Select use case...</option>
-                  <option value="study">Academic &amp; Research</option>
-                  <option value="business">Enterprise Workflow</option>
-                  <option value="freelance">Agency / Freelance</option>
-                  <option value="other">Other</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 gap-3 flex items-center px-4 pointer-events-none text-slate-500">
-                  <span class="material-symbols-outlined">expand_more</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="block text-sm font-semibold text-slate-700">Intended Use</label>
+                <div class="relative custom-dropdown" id="use-case-dropdown">
+                  <button type="button"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-400 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all cursor-pointer group dropdown-trigger">
+                    <span class="selected-option text-slate-500">Select use case...</span>
+                    <span
+                      class="material-symbols-outlined transition-transform duration-200 dropdown-arrow">expand_more</span>
+                  </button>
+                  <input type="hidden" name="use_case" class="dropdown-input" required>
+
+                  <div
+                    class="dropdown-menu absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform opacity-0 scale-95 pointer-events-none transition-all duration-200 origin-top">
+                    <div class="p-2 space-y-1">
+                      <button type="button" data-value="Academic & Research"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div
+                          class="size-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-100 transition-colors">
+                          <span class="material-symbols-outlined text-base">school</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">Academic & Research</span>
+                      </button>
+                      <button type="button" data-value="Enterprise Workflow"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div
+                          class="size-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-100 transition-colors">
+                          <span class="material-symbols-outlined text-base">business_center</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">Enterprise Workflow</span>
+                      </button>
+                      <button type="button" data-value="Agency / Freelance"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div
+                          class="size-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600 group-hover:bg-purple-100 transition-colors">
+                          <span class="material-symbols-outlined text-base">engineering</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">Agency / Freelance</span>
+                      </button>
+                      <button type="button" data-value="Other"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div
+                          class="size-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-600 group-hover:bg-slate-100 transition-colors">
+                          <span class="material-symbols-outlined text-base">more_horiz</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">Other</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="block text-sm font-semibold text-slate-700">Indicative Budget</label>
+                <div class="relative custom-dropdown" id="budget-dropdown">
+                  <button type="button"
+                    class="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-400 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all cursor-pointer group dropdown-trigger">
+                    <span class="selected-option text-slate-500">Select budget range...</span>
+                    <span
+                      class="material-symbols-outlined transition-transform duration-200 dropdown-arrow">expand_more</span>
+                  </button>
+                  <input type="hidden" name="budget_range" class="dropdown-input" required>
+
+                  <div
+                    class="dropdown-menu absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform opacity-0 scale-95 pointer-events-none transition-all duration-200 origin-top">
+                    <div class="p-2 space-y-1">
+                      <button type="button" data-value="€50 - €1,000"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div class="size-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+                          <span class="material-symbols-outlined text-base">payments</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">€50 - €1,000</span>
+                      </button>
+                      <button type="button" data-value="€1,000 - €5,000"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div class="size-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                          <span class="material-symbols-outlined text-base">payments</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">€1,000 - €5,000</span>
+                      </button>
+                      <button type="button" data-value="€5,000 - €10,000"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div class="size-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+                          <span class="material-symbols-outlined text-base">payments</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">€5,000 - €10,000</span>
+                      </button>
+                      <button type="button" data-value="€10,000+"
+                        class="dropdown-option w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors text-left group">
+                        <div class="size-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600">
+                          <span class="material-symbols-outlined text-base">payments</span>
+                        </div>
+                        <span class="text-sm font-medium text-slate-700">€10,000+</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -377,13 +473,14 @@
               <label class="block text-sm font-semibold text-slate-700" for="message">The Challenge</label>
               <textarea
                 class="w-full px-4 py-3 rounded-xl bg-slate-50 border-slate-200 text-slate-900 focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-all placeholder:text-slate-400"
-                id="message" placeholder="Describe the problem you are trying to solve..." rows="4"></textarea>
+                id="message" name="message" placeholder="Describe the problem you are trying to solve..." rows="4"
+                required></textarea>
             </div>
-            <button
+            <button id="submit-btn"
               class="w-full py-4 px-6 rounded-xl bg-accent hover:bg-accent-hover text-white font-bold text-lg shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2 group"
-              type="button">
-              Send Request
-              <span
+              type="submit">
+              <span id="btn-text">Send Request</span>
+              <span id="btn-icon"
                 class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </button>
             <p class="text-xs text-center text-slate-400 mt-6">
@@ -412,7 +509,7 @@
             <h4 class="font-semibold text-slate-900 mb-2">Product</h4>
             <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="index.html">Home</a>
             <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="products.html">Features</a>
-            <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="products.html">Buy Now</a>
+            <a class="text-sm text-slate-500 hover:text-accent transition-colors" href="products.html">Get WorkNoted</a>
           </div>
           <div class="flex flex-col gap-3">
             <h4 class="font-semibold text-slate-900 mb-2">Services</h4>
@@ -437,7 +534,76 @@
     </footer>
   </div>
 
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div id="modal-backdrop"
+      class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+    <div id="modal-content"
+      class="relative bg-white/90 backdrop-blur-xl rounded-[32px] p-8 md:p-12 shadow-2xl border border-white/50 max-w-md w-full opacity-0 pointer-events-none transition-all">
+      <div id="success-icon" class="hidden mb-6 flex justify-center">
+        <div class="size-20 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 shadow-inner">
+          <span class="material-symbols-outlined !text-[44px] animate-[bounce_2s_infinite]">check_circle</span>
+        </div>
+      </div>
+      <div id="error-icon" class="hidden mb-6 flex justify-center">
+        <div class="size-20 rounded-full bg-rose-50 flex items-center justify-center text-rose-600 shadow-inner">
+          <span class="material-symbols-outlined !text-[44px]">warning</span>
+        </div>
+      </div>
+
+      <h3 id="modal-title" class="text-2xl font-bold text-center text-slate-900 mb-3">Title Here</h3>
+      <p id="modal-message" class="text-center text-slate-500 mb-8 leading-relaxed">Message goes here.</p>
+
+      <button id="modal-close"
+        class="w-full py-4 rounded-2xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl active:scale-95">
+        Dismiss
+      </button>
+    </div>
+  </div>
+
   <script>
+    // Modal Controller
+    const modal = document.getElementById('feedback-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalContent = document.getElementById('modal-content');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+    const modalClose = document.getElementById('modal-close');
+    const successIcon = document.getElementById('success-icon');
+    const errorIcon = document.getElementById('error-icon');
+
+    function showModal(type, title, message) {
+      modalTitle.textContent = title;
+      modalMessage.textContent = message;
+
+      if (type === 'success') {
+        successIcon.classList.remove('hidden');
+        errorIcon.classList.add('hidden');
+        modalClose.className = "w-full py-4 rounded-2xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200 hover:shadow-xl active:scale-95";
+      } else {
+        successIcon.classList.add('hidden');
+        errorIcon.classList.remove('hidden');
+        modalClose.className = "w-full py-4 rounded-2xl bg-rose-600 text-white font-bold hover:bg-rose-700 transition-all shadow-lg shadow-rose-200 hover:shadow-xl active:scale-95";
+      }
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modalBackdrop.classList.add('opacity-100');
+        modalContent.classList.add('animate-modal', 'opacity-100', 'pointer-events-auto');
+      }, 10);
+    }
+
+    function hideModal() {
+      modalBackdrop.classList.remove('opacity-100');
+      modalContent.classList.remove('animate-modal', 'opacity-100', 'pointer-events-auto');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    modalClose.addEventListener('click', hideModal);
+    modalBackdrop.addEventListener('click', hideModal);
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
@@ -472,6 +638,132 @@
         menuIcon.textContent = 'menu';
       });
     });
+
+    // EmailJS Form Integration
+    const contactForm = document.getElementById('contact-form-element');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Set loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+      btnText.textContent = 'Sending...';
+      btnIcon.textContent = 'hourglass_empty';
+
+      try {
+        // 1. Send "Contact us" email to site owner (Mandatory First)
+        console.log('Attempting to send site owner notification...');
+        const ownerResponse = await emailjs.sendForm('service_v4m3eqc', 'template_jk0mpae', contactForm);
+        console.log('Site owner notification success:', ownerResponse);
+
+        // 2. Send "Auto-reply" confirmation to the user (Efficiently via direct params)
+        console.log('Attempting to send user confirmation...');
+        const userParams = {
+          from_name: contactForm.from_name.value,
+          from_email: contactForm.from_email.value,
+          use_case: contactForm.use_case.value,
+          budget_range: contactForm.budget_range.value,
+          message: contactForm.message.value
+        };
+
+        const userResponse = await emailjs.send('service_v4m3eqc', 'template_hqyvd2h', userParams);
+        console.log('User confirmation success:', userResponse);
+
+        showModal('success', 'Request Sent Successfully!', 'Thank you! We have received your query and sent a confirmation email to your inbox.');
+
+        contactForm.reset();
+
+        // Reset all custom dropdown labels
+        document.querySelectorAll('.selected-option').forEach(span => {
+          if (span.closest('#use-case-dropdown')) span.textContent = "Select use case...";
+          if (span.closest('#budget-dropdown')) span.textContent = "Select budget range...";
+          span.classList.remove('text-slate-900');
+          span.classList.add('text-slate-500');
+        });
+
+      } catch (error) {
+        console.error('EmailJS Detailed Error:', error);
+
+        let errorMsg = 'Oops! Something went wrong. Please try again later or contact us directly.';
+        let errorTitle = 'Submission Failed';
+
+        // Specific message for the 412 error reported by the user
+        if (error.status === 412 || (error.text && error.text.includes('insufficient authentication scopes'))) {
+          errorTitle = 'Authentication Error';
+          errorMsg = 'Your EmailJS Gmail service needs to be reconnected in the dashboard. Please contact site administration.';
+        }
+
+        showModal('error', errorTitle, errorMsg);
+
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+        btnText.textContent = 'Send Request';
+        btnIcon.textContent = 'arrow_forward';
+      }
+    });
+
+    // Custom Dropdown Controller
+    function initCustomDropdowns() {
+      const dropdowns = document.querySelectorAll('.custom-dropdown');
+
+      dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const arrow = dropdown.querySelector('.dropdown-arrow');
+        const selectedText = dropdown.querySelector('.selected-option');
+        const input = dropdown.querySelector('.dropdown-input');
+        const options = dropdown.querySelectorAll('.dropdown-option');
+
+        function toggle(forceOpen = null) {
+          const isOpen = forceOpen !== null ? !forceOpen : !menu.classList.contains('opacity-0');
+          if (isOpen) {
+            menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            arrow.classList.remove('rotate-180');
+          } else {
+            // Close other dropdowns first
+            document.querySelectorAll('.dropdown-menu').forEach(m => {
+              if (m !== menu) {
+                m.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                m.parentElement.querySelector('.dropdown-arrow').classList.remove('rotate-180');
+              }
+            });
+            menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+            arrow.classList.add('rotate-180');
+          }
+        }
+
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggle();
+        });
+
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            const value = option.getAttribute('data-value');
+            selectedText.textContent = value;
+            selectedText.classList.remove('text-slate-500');
+            selectedText.classList.add('text-slate-900');
+            input.value = value;
+            toggle(false);
+          });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!dropdown.contains(e.target)) {
+            toggle(false);
+          }
+        });
+      });
+    }
+
+    initCustomDropdowns();
   </script>
 </body>
 
