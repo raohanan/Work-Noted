@@ -152,14 +152,26 @@
                     WorkNoted is a local-first productivity tool. Achieve your goals with responsive
                     data organization and absolute privacy, no complex cloud dependency.
                 </p>
-                <div class="flex flex-col items-center gap-4">
-                    <a href="#student-mode"
-                        class="bg-primary hover:bg-primary-hover text-white text-sm md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full transition-all shadow-glow hover:shadow-glow-sm transform hover:-translate-y-0.5 whitespace-nowrap inline-flex items-center justify-center">
-                        See How It Works
-                    </a>
+                <div class="flex flex-col items-center gap-6">
+                    <div class="flex flex-col items-center gap-1">
+                        <span class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white">€9.99</span>
+                        <span class="text-sm font-bold text-gray-400 uppercase tracking-widest">One-time purchase</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://gumroad.com/l/Worknoted" target="_blank" rel="noopener noreferrer"
+                            class="bg-primary hover:bg-primary-hover text-white text-sm md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full transition-all shadow-glow hover:shadow-glow-sm transform hover:-translate-y-0.5 whitespace-nowrap inline-flex items-center justify-center gap-2">
+                            Buy WorkNoted
+                            <span class="material-symbols-outlined !text-sm">shopping_cart</span>
+                        </a>
+                        <a href="#student-mode"
+                            class="text-primary hover:text-primary-hover text-sm md:text-base font-semibold transition-colors inline-flex items-center gap-1 group">
+                            See How It Works
+                            <span class="material-symbols-outlined !text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
                     <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500">
-                        <span class="material-symbols-outlined text-[18px]">verified</span>
-                        No subscriptions. One time purchase.
+                        <span class="material-symbols-outlined text-[18px]">cloud_download</span>
+                        Instant download via Gumroad
                     </div>
                 </div>
                 <div class="mt-20 relative group perspective-1000">
@@ -167,6 +179,7 @@
                         class="relative mx-auto w-full max-w-lg rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 dark:border-slate-800 transform transition-transform duration-700 ease-out hover:scale-[1.02]">
                         <img src="images/workNoted.png" alt="WorkNoted Interface" class="w-full h-auto block">
                     </div>
+                    <p class="text-center text-sm text-gray-400 dark:text-gray-500 mt-4 font-medium">Clean note workspace — organize everything in one place</p>
                 </div>
             </div>
         </div>
@@ -203,6 +216,7 @@
                             class="relative bg-white dark:bg-[#15191E] rounded-2xl w-full overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800">
                             <img src="images/workNoted1.png" alt="Student Mode" class="w-full h-auto block">
                         </div>
+                        <p class="text-center text-sm text-gray-400 dark:text-gray-500 mt-4 font-medium">Simple project organization — subjects, notes & exams at a glance</p>
                     </div>
                 </div>
                 <div id="work-mode" class="flex flex-col md:flex-row-reverse items-center gap-16">
@@ -238,6 +252,7 @@
                             class="relative bg-white dark:bg-[#15191E] rounded-2xl w-full overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800">
                             <img src="images/workNoted2.png" alt="Work Mode" class="w-full h-auto block">
                         </div>
+                        <p class="text-center text-sm text-gray-400 dark:text-gray-500 mt-4 font-medium">Fast local search — find any note or project in milliseconds</p>
                     </div>
                 </div>
             </div>
@@ -408,8 +423,11 @@
                             </div>
                             <h2 class="text-lg font-bold tracking-tight">NewAgent</h2>
                         </div>
+                        <p class="text-sm text-slate-500 max-w-xs mb-2">
+                            <strong class="text-slate-700">WorkNoted is a product by NewAgent.</strong>
+                        </p>
                         <p class="text-sm text-slate-500 max-w-xs mb-6">
-                            WorkNoted, a product by NewAgent. The local-first, privacy-focused workspace for deep work.
+                            A local-first, privacy-focused workspace for deep work.
                             Securely organize your projects, notes, and intellectual property completely offline.
                         </p>
                     </div>
